@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seeds Sales Management System</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     background: linear-gradient(135deg, #a8e063, #64a7bb);
+      color: #2f4f2f;
+    }
+
+    /* ===== Custom Header ===== */
+    .top-header {
+       background: linear-gradient(to right, #77b9ab, #6bb37b, #86507f);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 12px 24px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 44px;
+      margin-right: 12px;
+      border-radius: 8px;
+      background: white;
+      padding: 4px;
+    }
+
+    .location {
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .search-bar {
+      flex: 1;
+      margin: 0 20px;
+      display: flex;
+      max-width: 600px;
+    }
+
+    .search-bar select,
+    .search-bar input,
+    .search-bar button {
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      outline: none;
+    }
+
+    .search-bar select {
+      border-radius: 6px 0 0 6px;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .search-bar input {
+      flex: 1;
+    }
+
+    .search-bar button {
+      background-color: #ffc107;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+    }
+
+    .right-section {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .right-section div {
+      font-size: 12px;
+      line-height: 1.2;
+      cursor: pointer;
+    }
+
+    .home-btn {
+      background-color: #c8e6c9;
+      color: #2e7d32;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background-color: #a5d6a7;
+    }
+
+    /* ===== Content Container ===== */
+    .container {
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px;
+      width: 95%;
+      max-width: 1000px;
+      margin: 40px auto;
+      box-shadow: 0 16px 40px rgba(41, 128, 59, 0.25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .actions-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .actions-list div {
+      background: #f0fdf4;
+      border-radius: 20px;
+      padding: 14px 22px;
+      font-weight: 600;
+      color: #2f4f2f;
+      user-select: none;
+      border: 1px solid #d4edda;
+      transition: background-color 0.3s ease;
+    }
+
+    .actions-list div:hover {
+      background: #c8e6c9;
+    }
+
+    .profile {
+      flex: 0 0 200px;
+      text-align: center;
+    }
+
+    .profile img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(41, 128, 59, 0.15);
+    }
+
+    .profile .role {
+      margin-top: 15px;
+      background: #e8f5e9;
+      border-radius: 20px;
+      font-weight: 700;
+      color: #2e7d32;
+      padding: 8px 16px;
+      display: inline-block;
+    }
+
+    /* ===== Responsive Layout ===== */
+    @media (max-width: 800px) {
+      .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .search-bar {
+        width: 100%;
+        margin: 12px 0;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+      }
+
+      .profile {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Header -->
+  <div class="top-header">
+    <div class="logo-area">
+      <div class="logo">
+        <img src="https://www.dailyrecord.us/publicfiles/2/images/2019/01/22595c44f78481c31.png" alt="Logo" />
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <select>
+       
+      </select>
+      <input type="text" placeholder="Search..." />
+      <button>🔍</button>
+    </div>
+
+    <div class="right-section">
+     
+      <a href="index.html" class="home-btn"> Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="container">
+<div class="actions-list">
+  <a href="addtocart.html"><div>Add and delete to Cart</div></a>
+  <a href="placeorder.html"><div>Place Order</div></a>
+  <a href="customer.html"><div>Customer Address</div></a>
+  <a href="payment.html"><div>Make Payment</div></a>
+</div>
+
+    <div class="profile">
+      <img src="https://gardentriviadotcom.files.wordpress.com/2016/02/fotolia_60561501_xs-11.jpg" alt="Customer Profile" />
+      <div class="role">Customer</div>
+    </div>
+  </div>
+
+</body>
+</html>

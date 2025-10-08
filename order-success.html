@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order Success</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #e8f5e9; }
+    .box { background: white; padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    h1 { color: #2e7d32; }
+    p { margin-top: 20px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>🎉 Order Placed Successfully!</h1>
+    <p>Your order ID is: <span id="oid"></span></p>
+    <p>Thank you for shopping with us.</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const orderId = params.get("orderId");
+    if (orderId) {
+      document.getElementById("oid").innerText = orderId;
+    } else {
+      document.getElementById("oid").innerText = "—";
+    }
+  </script>
+</body>
+</html>

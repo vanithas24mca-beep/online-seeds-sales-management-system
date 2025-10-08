@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Place Order</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f7ffe0, #d2f8d2);
+      margin: 0;
+      padding: 30px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2f7d0f;
+      margin-bottom: 30px;
+    }
+    .order-summary {
+      max-width: 800px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f0f7e8;
+      color: #126b0b;
+    }
+    .total {
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      color: #126b0b;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #1c7c32;
+    }
+    .empty-msg {
+      text-align: center;
+      font-size: 20px;
+      color: #ff0000;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧾 Order Summary</h1>
+
+  <div class="order-summary" id="orderSummary"></div>
+
+  <script>
+    const cartItems = JSON.parse(localStorage.getItem('cartItems') || "[]");
+    const customer = JSON.parse(localStorage.getItem('customerDetails') || "null");
+    const container = document.getElementById('orderSummary');
+
+    if (!customer) {
+      container.innerHTML = `<div class="empty-msg">No customer details found. Please enter address first.</div>`;
+    } else if (cartItems.length === 0) {
+      container.innerHTML = `<div class="empty-msg">Your cart is empty. Please add items.</div>`;
+    } else {
+      let total = 0;
+      let tableHTML = `
+        <table>
+          <tr>
+            <th>Item</th><th>Quantity</th><th>Price/unit</th><th>Total</th>
+          </tr>
+      `;
+      cartItems.forEach(item => {
+        const itemTotal = item.quantity * item.price;
+        total += itemTotal;
+        tableHTML += `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>Rs ${item.price}</td>
+            <td>Rs ${itemTotal}</td>
+          </tr>
+        `;
+      });
+      tableHTML += `</table>`;
+      container.innerHTML = `
+        ${tableHTML}
+        <div class="total">Total Price: Rs ${total}</div>
+        <button class="btn" onclick="confirmOrder()">✅ Confirm Order</button>
+      `;
+
+      function confirmOrder() {
+        const orderObj = {
+          customer: customer,
+          items: cartItems,
+          total: total
+        };
+        localStorage.setItem("pendingOrder", JSON.stringify(orderObj));
+        window.location.href = "payment.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

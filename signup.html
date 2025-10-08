@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a8e063, #64a7bb);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #222;
+    }
+
+    .container {
+      background: #fefefe;
+      padding: 40px;
+      width: 480px;
+      border-radius: 25px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-shadow: 1px 1px 0 #d9ffd9;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #333;
+      margin-top: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+      padding: 12px 16px;
+      border-radius: 25px;
+      border: 1.5px solid #b5e6b5;
+      font-size: 15px;
+      transition: 0.3s ease;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #4caf50;
+      box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+    }
+
+    input::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #4caf50, #7ddf73);
+      color: white;
+      border: none;
+      padding: 14px;
+      width: 100%;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    .back-link {
+      margin-top: 20px;
+      display: block;
+      text-align: center;
+      color: #2e7d32;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        width: 90%;
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .submit-btn {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up</h2>
+    
+    <!-- Updated: attach JS handler to the form -->
+    <form onsubmit="return handleSignUp(event)">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Create a password" required>
+
+      <label for="address">Address</label>
+      <input type="text" id="address" placeholder="Enter your address">
+
+      <button type="submit" class="submit-btn">Create Account</button>
+    </form>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <!-- ✅ JavaScript for redirecting with message -->
+  <script>
+    function handleSignUp(event) {
+      event.preventDefault();
+
+      // Optional: You can collect and process form data here
+
+      // ✅ Redirect to login.html with success message
+      window.location.href = 'login.html?message=Account%20created%20successfully';
+      return false;
+    }
+  </script>
+</body>
+</html>

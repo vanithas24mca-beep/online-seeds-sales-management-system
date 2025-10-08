@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SeedMart - Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    header .btn {
+      margin-left: 20px;
+    }
+
+    .center-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
+      color: #ffffff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      padding: 20px;
+    }
+
+    .center-content h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #d0ffcc;
+    }
+
+    .center-content h1 {
+      font-size: 3rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .center-content p {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .btn {
+      text-decoration: none;
+      background: linear-gradient(135deg, #6B8E23, #9ACD32);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 6px 16px rgba(154, 205, 50, 0.6);
+      transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #9ACD32, #6B8E23);
+      box-shadow: 0 10px 26px rgba(107, 142, 35, 0.7);
+      transform: scale(1.1);
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+      box-shadow: 0 4px 14px rgba(107, 142, 35, 0.6);
+    }
+
+    @media (max-width: 500px) {
+      .center-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .btn {
+        padding: 10px 22px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/AUI1Tg1/time-lapse-of-growing-soybeans-vegetables-5d1-on-sunrise-backgroundtl_soybeans_05d_25fps_1080p_sunrise_15s_85q_rgbmov_4jwepqhwl__91916f023748bd4d34a50b48c0c23aef__P360.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header -->
+  <header>
+    <a href="login.html" class="btn">Login</a>
+    <a href="signup.html" class="btn">Sign Up</a>
+    <a href="about.html" class="btn">About</a>
+     </header>
+
+  <!-- Centered Content -->
+  <div class="center-content">
+    <h2>🌱 "Grow Your Future with Every Seed"</h2>
+    <h1>Welcome to SeedMart</h1>
+    <p>Where farmers, gardeners, and nature lovers shop for quality seeds.</p>
+      </div>
+
+</body>
+</html>

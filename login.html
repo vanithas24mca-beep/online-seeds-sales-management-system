@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a8e063, #64a7bb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #2f4f2f;
+    }
+
+    .container {
+      background: #f7fff7;
+      border-radius: 24px;
+      padding: 50px 40px;
+      width: 400px;
+      box-shadow: 0 16px 40px rgba(41, 128, 59, 0.3);
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      box-shadow: 0 20px 48px rgba(41, 128, 59, 0.5);
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: #2e7d32;
+      text-shadow: 1px 1px 4px #b2fab4;
+      text-transform: capitalize;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      background-color: #d0f0c0;
+      border-radius: 30px;
+      padding: 12px 20px;
+      margin: 15px 0;
+    }
+
+    .input-group input,
+    .input-group select {
+      border: none;
+      background: transparent;
+      flex: 1;
+      padding: 8px 10px;
+      font-size: 16px;
+      outline: none;
+      color: #2e7d32;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .input-group span {
+      margin-right: 15px;
+      font-size: 22px;
+      color: #4caf50;
+    }
+
+    .btn {
+      margin-top: 25px;
+      background: linear-gradient(135deg, #56ab2f, #a8e063);
+      border: none;
+      color: white;
+      padding: 14px 50px;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(86, 171, 47, 0.6);
+      transition: background 0.3s ease, transform 0.25s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #a8e063, #56ab2f);
+      transform: scale(1.05);
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    @media (max-width: 450px) {
+      .container {
+        width: 90%;
+        padding: 40px 25px;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .btn {
+        padding: 12px 40px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Login to Seeds Portal</h2>
+
+    <form onsubmit="return handleLogin(event)">
+      <div class="input-group">
+        <span>👤</span>
+        <input type="email" id="email" placeholder="Enter email" required />
+      </div>
+
+      <div class="input-group">
+        <span>🔒</span>
+        <input type="password" id="password" placeholder="Enter password" required />
+      </div>
+
+      <div class="input-group">
+        <span>🎯</span>
+        <select id="role" required>
+          <option value="" disabled selected>Select role</option>
+          <option value="customer">Customer</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+
+      const role = document.getElementById('role').value;
+
+      if (role === 'customer') {
+        // Redirect to the customer dashboard page
+        window.location.href = 'customer-dashboard.html';
+      } else if (role === 'admin') {
+        // Redirect to admin activity page
+        window.location.href = 'admin_activity.html';
+      } else {
+        alert('Please select a valid role.');
+      }
+
+      return false;
+    }
+  </script>
+
+</body>
+</html>
